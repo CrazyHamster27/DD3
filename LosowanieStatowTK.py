@@ -5,7 +5,7 @@ from random import randint
 root = Tk()
 root.title('Losowanie Statystyk')
 root.geometry('400x400')
-val = [0,0,0,0,0,0]
+val = [0, 0, 0, 0, 0, 0]
 sum = 0
 rest = 0
 
@@ -13,9 +13,9 @@ def losuj():
     global rest
     rest = 0
     sum = 0
-    while sum < 70:
+    while sum < 65:
         sum = 0
-        for i in range(0,6):
+        for i in range(6):
             value = randint(1,6) + randint(1,6) + randint(1,6)
             val[i] = value
             sum = sum + value
@@ -26,15 +26,15 @@ def losuj():
     label_int_val = Label(root, text=val[3])
     label_wis_val = Label(root, text=val[4])
     label_cha_val = Label(root, text=val[5])
+    label_sum_val = Label(root, text=sum)
+    label_rest_val = Label(root, text=rest)
     label_str_val.grid(row=1, column=2)
     label_dex_val.grid(row=2, column=2)
     label_con_val.grid(row=3, column=2)
     label_int_val.grid(row=4, column=2)
     label_wis_val.grid(row=5, column=2)
     label_cha_val.grid(row=6, column=2)
-    label_sum_val = Label(root, text=sum)
     label_sum_val.grid(row=7, column=2)
-    label_rest_val = Label(root, text=rest)
     label_rest_val.grid(row=9, column=2)
 
 
