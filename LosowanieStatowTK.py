@@ -57,10 +57,9 @@ def sub(x):
 
 
 def buttons():
-    ### lambda z jakiegos powodu zapamiętuje ostatnią wartość 'i' i odnosi ją do wszystkich guzików - do poprawy
     for i in range(6):
-        Button(root, text=btn_list[1], command=lambda: sub(i), width=3).grid(row=i+1, column=1)
-        Button(root, text=btn_list[0], command=lambda: add(i), width=3).grid(row=i+1, column=3)
+        Button(root, text=btn_list[1], command=lambda i=i: sub(i), width=3).grid(row=i+1, column=1)
+        Button(root, text=btn_list[0], command=lambda i=i: add(i), width=3).grid(row=i+1, column=3)
     Button(root, text=btn_list[2], command=losuj).grid(row=9, columnspan=4, sticky=W + E)
     Button(root, text=btn_list[3], command=remember).grid(row=10, column=0, columnspan=2, sticky=W + E)
     Button(root, text=btn_list[4], command=load).grid(row=10, column=2, columnspan=2, sticky=W + E)
